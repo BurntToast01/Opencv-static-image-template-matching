@@ -3,24 +3,12 @@ import time
 import pyautogui
 import cv2 as cv
 import numpy as np
-
 from PIL import ImageGrab
-
-# YOU DID IT! it fucking works! the world is yours now boiya!
-
-#TODO find out if making the bbox region smaller helps the threshold
-
-
-
-#
-# THIS CODE IS COMING TOGETHER.
-# at this time this code will capture a live stream of pictures from a screen region
 pyautogui.FAILSAFE = None
 
 main_templates = ["/home/something/PycharmProjects/REDLIGHT automation/Windows login/gmail print button.png",
                   "/home/something/PycharmProjects/REDLIGHT automation/Windows login/gmail print save button.png",
                   ]
-
 
 class automated_without_coordinates:
     def __init__(self, x):
@@ -42,20 +30,15 @@ class automated_without_coordinates:
             # action. This current while True loop is working well. I would say it take roughly about 0.6 of a sec
             # to find an image.
             # The current loop for this opencv template is no coordinates version
-            ## TODO: find out which loop is faster and determine the pros and cons of each after times are recorded.
+            
             print("counter is: " ,self.counter1)
             template = cv.imread (i)
             template_gray = np.array (cv.cvtColor (template, cv.COLOR_RGB2GRAY))
             # cv.imshow("gray",template_gray)
             # cv.waitKey()
             h, w, = template_gray.shape
-            # The code below does not seem to be needed for this to work.
-            # template_gray.astype(np.uint8)
-
-
+            
             while True:
-                # DO NOT change this screen capture you dumb fuck
-                # Use this to start matching templates with Opencv.
                 a = np.array (ImageGrab.grab (bbox=(0, 0, h+ 2560, w + 1440)))
                 b = cv.cvtColor (a, cv.COLOR_RGB2GRAY)
                 # the line of code is to make sure we can see a live image from the screen
@@ -68,15 +51,13 @@ class automated_without_coordinates:
                 # print("finished matching")
                 min_val, max_val, min_loc, max_loc = cv.minMaxLoc (result)
                 # print(max_val)
-                # threshold
                 if self.counter1 >= len (self.templates):
                     break
                 if max_val >= 0.9:
-                    # time.sleep (0.25)
                     pyautogui.click (
-                        x=max_loc[0],  # screen x
+                        x=max_loc[0],
                         y=max_loc[1]
-                    )  # screen y_
+                    )
                     self.counter1 += 1
                     end = time.time ()
                     find_time = end - start
