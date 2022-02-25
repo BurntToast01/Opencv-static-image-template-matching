@@ -16,11 +16,8 @@ class automated_without_coordinates:
         self.find_vmButton ()
 
     def find_vmButton(self):
-
         start = time.time ()
         self.counter1 = 0
-
-        job_done = 0
         for i in self.templates:
             # for ImageGrab.grab (bbox=(x, y, x + w, y + h) you can set x and y as 0, then set w and h to the
             # resolution of the screen. you can also call a pyautogui.locate to find the (x,y,w,h) in a while is
@@ -30,7 +27,6 @@ class automated_without_coordinates:
             # action. This current while True loop is working well. I would say it take roughly about 0.6 of a sec
             # to find an image.
             # The current loop for this opencv template is no coordinates version
-            
             print("counter is: " ,self.counter1)
             template = cv.imread (i)
             template_gray = np.array (cv.cvtColor (template, cv.COLOR_RGB2GRAY))
@@ -62,9 +58,7 @@ class automated_without_coordinates:
                     end = time.time ()
                     find_time = end - start
                     print ("full loop took: ", find_time)
-                    print ("find_vmBut"
-                           "ton was successful")
-
+                    print ("find_vmButton was successful")
                     break
 
 
