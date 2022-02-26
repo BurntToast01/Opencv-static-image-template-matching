@@ -2,6 +2,7 @@
 
 [![Total alerts](https://img.shields.io/lgtm/alerts/g/BurntToast01/Opencv-static-image-template-matching.svg?logo=lgtm&logoWidth=18)](https://lgtm.com/projects/g/BurntToast01/Opencv-static-image-template-matching/alerts/)
 [![Language grade: Python](https://img.shields.io/lgtm/grade/python/g/BurntToast01/Opencv-static-image-template-matching.svg?logo=lgtm&logoWidth=18)](https://lgtm.com/projects/g/BurntToast01/Opencv-static-image-template-matching/context:python)
+
 OpenCV template matching for static images.
 This project will: 
 find the dimension of the given template/s,
