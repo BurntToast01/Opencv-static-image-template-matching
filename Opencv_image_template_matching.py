@@ -4,10 +4,8 @@ import cv2 as cv
 import numpy as np
 from PIL import ImageGrab
 pyautogui.FAILSAFE = None
-
-main_templates = ["/home/something/PycharmProjects/REDLIGHT automation/Windows login/gmail print button.png",
-                  "/home/something/PycharmProjects/REDLIGHT automation/Windows login/gmail print save button.png",
-                  ]
+# Note: main_templates is where you will put the image temeplates of what you are trying to find. it is a list and it must contain the full working directory of the file.
+main_templates = ["Example/AT_HOME/My Documents/Temaples/I am a template.png"]
 
 class automated_without_coordinates:
     def __init__(self, x):
