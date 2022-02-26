@@ -1,4 +1,6 @@
 # Opencv-static-image-template-matching
+HTML
+[![Total alerts](https://img.shields.io/lgtm/alerts/g/BurntToast01/Opencv-static-image-template-matching.svg?logo=lgtm&logoWidth=18)](https://lgtm.com/projects/g/BurntToast01/Opencv-static-image-template-matching/alerts/)
 OpenCV template matching for static images.
 This project will: 
 find the dimension of the given template/s,
